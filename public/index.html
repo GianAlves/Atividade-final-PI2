@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="index.js"></script>
 </head>
 <body>
@@ -38,12 +38,13 @@
         // fill in your cliend_id
         const client_id = '4b5aa2585d7486dbcee2';
 
-        const authorize_uri = 'https://github.com/login/oauth/authorize';
-        const redirect_uri = 'http://localhost:3003/oauth/redirect';
+  const authorize_uri = 'https://github.com/login/oauth/authorize';
+  const redirect_uri = 'http://localhost:8080/oauth/redirect';
 
-        const link = document.getElementById('login');
-        link.href = `${authorize_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}`;
-    </script>
+  const link = document.getElementById('login');
+  link.href = `${authorize_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}`;
+</script>
 
 </body>
+
 </html>
