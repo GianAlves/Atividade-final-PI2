@@ -10,4 +10,11 @@
 <body>
     <h1>Home page</h1>
 </body>
+<script>
+    const query = window.location.search.substring(1) || '';
+    const name = query.split('name=')[1];
+    document.body.appendChild(
+        document.createTextNode(`Bem-vindo, ${decodeURIComponent(name)}.`)
+    );
+</script>
 </html>
