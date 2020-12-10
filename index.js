@@ -42,10 +42,10 @@ const oauth = async ctx => {
   console.log(result.data);
   const name = result.data.name;
 
-  ctx.response.redirect(`/welcome.html?name=${name}`);
+  ctx.response.redirect(`/index.html?name=${name}`);
 };
 
 app.use(main);
 app.use(route.get('/oauth/redirect', oauth));
 
-app.listen(3001);
+app.listen(8081);

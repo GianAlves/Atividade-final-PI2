@@ -1,50 +1,98 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="index.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <div class="conteudo">
-        <form action="">
-            <div class="linhas">
-                <label for="nome">Nome</label>
+
+<body class="fundo-home">
+    <header>
+        <div style="background-color: aliceblue;">
+            <script>
+                const query = window.location.search.substring(1) || '';
+                const name = query.split('name=')[1];
+                var x = document.createElement("h1");                        // Create a <h1> element
+                var t = document.createTextNode(`Bem-vindo, ${decodeURIComponent(name)}`);    // Create a text node
+                x.appendChild(t);                                           // Append the text to <p>
+                document.body.appendChild(x);
+
+                // document.body.appendChild(
+                //     document.createTextNode(`Bem-vindo, ${decodeURIComponent(name)}`)
+                // );
+            </script>
+        </div>
+        <div class="imagem">
+            <img src="img/icone.png" alt="Logo" class="logo">
+        </div>
+    </header>
+    <div>
+        <form class="form-envia-dados" method="POST" action="http://localhost:8001/cliente/add">
+            <h2>Registra Cliente</h2>
+            <br>
+            <div class="campo">
+                <label>Nome:</label>
+                <input type="text" name="nome" required autocomplete="off">
             </div>
-            <div class="linhas">
-                <input id="nome" type="text" placeholder="joao.silva">
+            <div class="campo">
+                <label>Sobrenome:</label>
+                <input type="text" name="sobrenome" required autocomplete="off">
             </div>
-            <div class="linhas">
-                <label for="senha">Senha</label>
+            <div class="campo">
+                <label>Endereço:</label>
+                <input type="text" name="endereco" required autocomplete="off">
             </div>
-            <div class="linhas">
-                <input id="senha" type="password" placeholder="********">
+            <div class="campo">
+                <label>Cidade:</label>
+                <select name="cidade" class="select-box">
+                    <option value="Porto Alegre">Porto Alegre</option>
+                    <option value="Canoas">Canoas</option>
+                    <option value="Alvorada">Alvorada</option>
+                    <option value="Gravataí">Gravataí</option>
+                    <option value="Cachoeirinha">Cachoeirinha</option>
+                </select>
             </div>
-            <div class="linhas">
-                <input class="botao" type="button" value="Logar">
-                <input type="button" value="Cadastrar-se">
+            <div class="campo">
+                <label>Telefone:</label>
+                <input type="tel" name="telefone" required autocomplete="off">
+            </div>
+            <div class="campo">
+                <label>Email:</label>
+                <input type="email" name="email" required autocomplete="off">
+            </div>
+            <br>
+            <div class="botao-salvar">
+                <input type="submit" value="Salvar">
             </div>
         </form>
-        <br>
-        <button style="background-color: rgb(142, 105, 179); color:aliceblue; padding: 5px;">
-            <a id="login" class="loginGit">Fazer login com GitHub</a>
-        </button>
-        <!-- <a id="login">Login with GitHub</a> -->
     </div>
-
-    <script>
-        // fill in your cliend_id
-        const client_id = '4b5aa2585d7486dbcee2';
-
-  const authorize_uri = 'https://github.com/login/oauth/authorize';
-  const redirect_uri = 'http://localhost:3001/oauth/redirect';
-
-  const link = document.getElementById('login');
-  link.href = `${authorize_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}`;
-</script>
-
+    <br>
+    <br>
+    <div>
+        <form class="form-envia-dados" method="POST" action="http://localhost:8001/produto/add">
+            <h2>Registra Pedidos</h2>
+            <br>
+            <div class="campo">
+                <label>Nome:</label>
+                <input type="text" name="nome" required autocomplete="off">
+            </div>
+            <div class="campo">
+                <label>Preço:</label>
+                <input type="text" name="preco" required autocomplete="off">
+            </div>
+            <div class="campo">
+                <label>Descrição:</label>
+                <input type="text" name="descricao" autocomplete="off">
+            </div>
+            <br>
+            <div class="botao-salvar">
+                <input type="submit" value="Salvar">
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>
